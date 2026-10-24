@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Adanfopa Commodities Ltd | Cocoa buyers in Kumasi, Ghana</title>
+  <meta name="description" content="Adanfopa Commodities Ltd buys cocoa from farmers and sells to buyers. Based in Santasi, Kumasi, Ghana. Call 0243631511 or 0248683770.">
+  <meta name="theme-color" content="#2B0E07">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Adanfopa Commodities Ltd">
+  <meta property="og:description" content="We buy cocoa from farmers and sell to buyers. Santasi, Kumasi, Ghana.">
+  <meta property="og:image" content="images/og.jpg">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400..800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="vendor/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Adanfopa Commodities Ltd",
+    "description": "Cocoa buying company. Buys cocoa from farmers and sells to buyers.",
+    "image": "images/og.jpg",
+    "telephone": ["+233243631511", "+233248683770", "+233248714806", "+233245276032"],
+    "address": {
+      "@type": "PostalAddress",
+      "postOfficeBoxNumber": "SN 35",
+      "addressLocality": "Santasi, Kumasi",
+      "addressCountry": "GH"
+    }
+  }
+  </script>
+</head>
+<body>
+<div id="app" v-cloak>
+
+  <!-- ============ NAVBAR ============ -->
+  <nav class="navbar navbar-expand-lg fixed-top site-nav" :class="{ 'is-scrolled': scrolled }">
+    <div class="container">
+      <a class="navbar-brand brand" href="#top" @click="closeMenu">
+        <img src="images/emblem.png" alt="" width="44" height="40" class="brand-mark">
+        <span class="brand-text">
+          <span class="brand-name">Adanfopa</span>
+          <span class="brand-sub">Commodities Ltd</span>
+        </span>
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+              aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
+        <i class="bi bi-list fs-2"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav" ref="navEl">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item" v-for="link in links" :key="link.href">
+            <a class="nav-link" :href="link.href" @click="closeMenu">{{ link.label }}</a>
+          </li>
+          <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+            <a class="btn btn-cocoa btn-sm px-3" :href="phones[0].tel">
+              <i class="bi bi-telephone-fill me-2"></i>{{ phones[0].display }}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container">
+        <div class="row align-items-center g-5">
+
+          <div class="col-lg-6 order-2 order-lg-1">
+            <p class="hero-place"><i class="bi bi-geo-alt-fill"></i> Santasi, Kumasi, Ghana</p>
+            <h1 class="hero-title">Cocoa, bought straight from the farmer.</h1>
+            <p class="hero-lead">
+              Adanfopa Commodities Ltd buys cocoa from farmers and sells it to <b>COCOBOD</b>.
+              Call us to sell your beans, or to ask what we have for sale.
+            </p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-cocoa btn-lg" :href="phones[0].tel">
+                <i class="bi bi-telephone-fill me-2"></i>Call to sell your cocoa
+              </a>
+              <a class="btn btn-outline-forest btn-lg" href="#contact">Buy cocoa from us</a>
+            </div>
+          </div>
+
+          <div class="col-lg-6 order-1 order-lg-2">
+            <div class="emblem-wrap">
+              <div class="emblem" role="group" aria-label="Cocoa journey: farm, pod, beans, open pod">
+                <button v-for="(p, key) in pieces" :key="key" type="button"
+                        class="piece" :class="['piece-' + key, { 'is-active': activePiece === key }]"
+                        :aria-label="p.title" :aria-pressed="activePiece === key"
+                        @mouseenter="activePiece = key" @focus="activePiece = key" @click="activePiece = key">
+                </button>
+              </div>
+              <Transition name="swap" mode="out-in">
+                <div class="emblem-caption" :key="activePiece">
+                  <strong>{{ pieces[activePiece].title }}</strong>
+                  <span>{{ pieces[activePiece].text }}</span>
+                </div>
+              </Transition>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="row g-5 align-items-start">
+          <div class="col-lg-7" v-reveal>
+            <h2 class="statement">We stand between the farm and the buyer, and we keep it simple.</h2>
+            <p class="lead-text">
+              Adanfopa Commodities Ltd is a cocoa buying company in Santasi, Kumasi.
+              Kumasi is in the Ashanti Region, one of Ghana's cocoa-growing regions.
+              We buy cocoa beans from farmers and sell them on to <b>COCOBOD</b>.
+            </p>
+          </div>
+          <div class="col-lg-5" v-reveal="{ delay: 120 }">
+            <dl class="facts">
+              <div><dt>Based in</dt><dd>Santasi, Kumasi</dd></div>
+              <div><dt>We buy</dt><dd>Cocoa beans, from farmers</dd></div>
+              <div><dt>We sell</dt><dd>Cocoa beans, to buyers</dd></div>
+              <div><dt>Reach us</dt><dd>Four phone lines, listed below</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ WHY US ============ -->
+    <section id="why" class="section pt-0">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-md-4" v-for="(r, i) in reasons" :key="r.title" v-reveal="{ delay: i * 120 }">
+            <div class="reason">
+              <i class="bi" :class="r.icon"></i>
+              <h3>{{ r.title }}</h3>
+              <p>{{ r.text }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FARMERS / BUYERS ============ -->
+    <section id="services" class="section section-tint">
+      <div class="container">
+        <h2 class="section-title" v-reveal>Are you selling or buying?</h2>
+
+        <div class="audience-tabs" role="tablist" v-reveal="{ delay: 80 }">
+          <button v-for="(a, key) in audiences" :key="key" role="tab" type="button"
+                  class="audience-tab" :class="{ active: audience === key }"
+                  :aria-selected="audience === key" @click="audience = key">
+            <i class="bi" :class="a.icon"></i> {{ a.tab }}
+          </button>
+        </div>
+
+        <Transition name="swap" mode="out-in">
+          <div class="audience-panel row g-4 align-items-center" :key="audience" role="tabpanel">
+            <div class="col-lg-6">
+              <h3 class="panel-title">{{ audiences[audience].title }}</h3>
+              <p class="lead-text mb-4">{{ audiences[audience].lead }}</p>
+              <a class="btn btn-cocoa" :href="phones[0].tel"><i class="bi bi-telephone-fill me-2"></i>{{ audiences[audience].cta }}</a>
+            </div>
+            <div class="col-lg-6">
+              <ul class="tick-list">
+                <li v-for="pt in audiences[audience].points" :key="pt">
+                  <i class="bi bi-check-circle-fill"></i><span>{{ pt }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </Transition>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section id="process" class="section section-night">
+      <div class="container">
+        <h2 class="section-title text-white" v-reveal>From the farm to the buyer</h2>
+        <p class="section-sub" v-reveal="{ delay: 80 }">What happens to your cocoa once you call us.</p>
+
+        <ol class="flow" v-reveal.watch>
+          <li v-for="(s, i) in steps" :key="s.title" class="flow-step" :style="{ '--i': i }">
+            <span class="flow-dot"><i class="bi" :class="s.icon"></i></span>
+            <h3>{{ s.title }}</h3>
+            <p>{{ s.text }}</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ GALLERY ============ -->
+    <section id="gallery" class="section pb-0">
+      <div class="container">
+        <h2 class="section-title" v-reveal>Cocoa, step by step</h2>
+        <div class="row g-3 gallery">
+          <div class="col-6 col-md-3" v-for="(g, i) in gallery" :key="g.src" v-reveal="{ delay: i * 100 }">
+            <figure class="gallery-item">
+              <div class="gallery-img"><img :src="g.src" :alt="g.alt" loading="lazy"></div>
+              <figcaption>{{ g.caption }}</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEASON ============ -->
+    <section id="season" class="section">
+      <div class="container">
+        <div class="row g-5 align-items-center">
+          <div class="col-lg-4" v-reveal>
+            <h2 class="section-title">The cocoa year</h2>
+            <p class="lead-text mb-0">
+              Most Ghanaian cocoa is harvested in the main crop, from about October to March.
+              A smaller light crop follows later in the year. Call us for current buying times.
+            </p>
+          </div>
+          <div class="col-lg-8" v-reveal="{ delay: 120 }">
+            <div class="season" role="img" aria-label="Cocoa crop calendar by month">
+              <div v-for="(m, i) in months" :key="m.name" class="season-cell"
+                   :class="[m.crop, { now: i === currentMonth }]">
+                <span class="season-bar"></span>
+                <span class="season-name">{{ m.name }}</span>
+                <span v-if="i === currentMonth" class="season-now">Now</span>
+              </div>
+            </div>
+            <ul class="season-key">
+              <li><span class="key main"></span> Main crop</li>
+              <li><span class="key light"></span> Light crop</li>
+              <li><span class="key quiet"></span> Between crops</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section id="faq" class="section pt-0">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-4" v-reveal>
+            <h2 class="section-title">Questions we hear often</h2>
+            <p class="lead-text mb-0">Not here? Call us or <a :href="'mailto:' + EMAIL">send an email</a>.</p>
+          </div>
+          <div class="col-lg-8" v-reveal="{ delay: 120 }">
+            <div class="accordion faq" id="faqList">
+              <div class="accordion-item" v-for="(f, i) in faqs" :key="f.q">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" :class="{ collapsed: i !== 0 }" type="button"
+                          data-bs-toggle="collapse" :data-bs-target="'#faq-' + i"
+                          :aria-expanded="i === 0" :aria-controls="'faq-' + i">{{ f.q }}</button>
+                </h3>
+                <div :id="'faq-' + i" class="accordion-collapse collapse" :class="{ show: i === 0 }" data-bs-parent="#faqList">
+                  <div class="accordion-body">{{ f.a }}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section id="contact" class="section section-cocoa">
+      <div class="container">
+        <h2 class="section-title text-white" v-reveal>Talk to us</h2>
+        <p class="section-sub" v-reveal="{ delay: 80 }">Call any line, or send us a message on WhatsApp.</p>
+
+        <div class="row g-4">
+          <div class="col-lg-5" v-reveal>
+            <ul class="phone-list">
+              <li v-for="p in phones" :key="p.raw">
+                <a :href="p.tel" class="phone-main"><i class="bi bi-telephone-fill"></i>{{ p.display }}</a>
+                <a :href="p.wa" target="_blank" rel="noopener" class="phone-wa" :aria-label="'WhatsApp ' + p.display">
+                  <i class="bi bi-whatsapp"></i>
+                </a>
+              </li>
+            </ul>
+            <a :href="'mailto:' + EMAIL" class="phone-main email-main mb-3"><i class="bi bi-envelope-fill"></i>{{ EMAIL }}</a>
+            <div class="address-card">
+              <i class="bi bi-geo-alt-fill"></i>
+              <address class="mb-0">
+                <strong>Adanfopa Commodities Ltd</strong><br>
+                P.O.Box SN 35<br>
+                Santasi, Kumasi, Ghana
+              </address>
+            </div>
+            <div class="hours-card">
+              <h3><i class="bi bi-clock-fill"></i> Opening hours</h3>
+              <dl>
+                <div v-for="h in hours" :key="h.day"><dt>{{ h.day }}</dt><dd>{{ h.time }}</dd></div>
+              </dl>
+            </div>
+          </div>
+
+          <div class="col-lg-7" v-reveal="{ delay: 120 }">
+            <div class="msg-card">
+              <h3>Send a message</h3>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="f-name" class="form-label">Your name</label>
+                  <input id="f-name" class="form-control" v-model.trim="form.name" autocomplete="name">
+                </div>
+                <div class="col-sm-6">
+                  <label for="f-email" class="form-label">Your email (optional)</label>
+                  <input id="f-email" type="email" class="form-control" v-model.trim="form.email" autocomplete="email">
+                </div>
+                <div class="col-sm-6">
+                  <label for="f-to" class="form-label">Which of our lines?</label>
+                  <select id="f-to" class="form-select" v-model="form.to">
+                    <option v-for="p in phones" :key="p.raw" :value="p.intl">{{ p.display }}</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label for="f-topic" class="form-label">I want to</label>
+                  <select id="f-topic" class="form-select" v-model="form.topic">
+                    <option>Sell my cocoa</option>
+                    <option>Buy cocoa</option>
+                    <option>Ask something else</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="f-msg" class="form-label">Message</label>
+                  <textarea id="f-msg" rows="3" class="form-control" v-model.trim="form.message"
+                            placeholder="Quantity, location, or your question"></textarea>
+                </div>
+                <div class="col-12 d-flex flex-wrap align-items-center gap-3">
+                  <a class="btn btn-gold" :href="waLink" target="_blank" rel="noopener">
+                    <i class="bi bi-whatsapp me-2"></i>Send on WhatsApp
+                  </a>
+                  <a class="btn btn-outline-cocoa" :href="mailLink">
+                    <i class="bi bi-envelope-fill me-2"></i>Send by email
+                  </a>
+<!--                  <small class="text-white-50 w-100">Each button opens WhatsApp or your email app with the message ready to send.</small>-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="map-frame mt-4" v-reveal>
+          <iframe title="Map of Santasi, Kumasi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                  src="https://www.google.com/maps?q=Santasi,+Kumasi,+Ghana&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <img src="images/emblem.png" alt="" width="44" height="40">
+        <div>
+          <div class="footer-name">Adanfopa Commodities Ltd</div>
+          <small>P.O.Box SN 35, Santasi, Kumasi</small><br>
+          <small><a class="footer-link" :href="'mailto:' + EMAIL">{{ EMAIL }}</a></small>
+        </div>
+      </div>
+      <small>&copy; {{ year }} Adanfopa Commodities Ltd. All rights reserved.</small>
+    </div>
+  </footer>
+
+  <!-- Mobile call bar -->
+  <a class="call-bar" :href="phones[0].tel">
+    <i class="bi bi-telephone-fill"></i> Call {{ phones[0].display }}
+  </a>
+</div>
+
+<script src="vendor/vue.global.prod.js"></script>
+<script src="vendor/bootstrap.bundle.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
