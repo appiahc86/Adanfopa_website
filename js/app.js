@@ -98,7 +98,7 @@ createApp({
       { icon: 'bi-clipboard-check-fill', title: 'Clear dealings', text: 'You know the weight, the quality check and the price before we agree.' },
     ];
 
-    /* ---- gallery (replace the images in images/gallery with your own photos) ---- */
+    /* ---- gallery ---- */
     const gallery = [
       { src: 'images/gallery/farm.jpg', alt: 'Cocoa tree with ripe pods', caption: 'The farm' },
       { src: 'images/gallery/pod.jpg', alt: 'A ripe cocoa pod', caption: 'The pod' },
@@ -114,7 +114,7 @@ createApp({
       { q: 'Where are you?', a: 'Our office is in Santasi, Kumasi. Our postal address is P.O.Box SN 35, Santasi, Kumasi.' },
     ];
 
-    /* ---- opening hours (confirm these) ---- */
+    /* ---- opening hours ---- */
     const hours = [
       { day: 'Monday to Friday', time: '8:00 am to 5:00 pm' },
       { day: 'Saturday', time: '8:00 am to 2:00 pm' },
@@ -122,7 +122,7 @@ createApp({
     ];
 
     /* ---- cocoa calendar ---- */
-    // main: Oct-Mar, light: Jul-Sep, quiet: Apr-Jun (general pattern, confirm with your own experience)
+    // main: Oct-Mar, light: Jul-Sep, quiet: Apr-Jun
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
     const crops = ['main', 'main', 'main', 'quiet', 'quiet', 'quiet', 'light', 'light', 'light', 'main', 'main', 'main'];
     const months = monthNames.map((name, i) => ({ name, crop: crops[i] }));
