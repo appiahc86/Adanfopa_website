@@ -9,7 +9,7 @@ const { createApp, ref, reactive, computed, onMounted, onBeforeUnmount } = Vue;
 const PHONE_NUMBERS = ['0243631511', '0248683770', '0248714806', '0245276032'];
 
 // email address !!
-const EMAIL = 'info@adanfopa.com';
+const EMAIL = 'info@adanfopacommoditiesgh.com';
 
 const toIntl = (n) => '233' + n.slice(1);
 const toDisplay = (n) => `${n.slice(0, 3)} ${n.slice(3, 6)} ${n.slice(6)}`;
