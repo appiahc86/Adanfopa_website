@@ -46,11 +46,7 @@
   <nav class="navbar navbar-expand-lg fixed-top site-nav" :class="{ 'is-scrolled': scrolled }">
     <div class="container">
       <a class="navbar-brand brand" href="#top" @click="closeMenu">
-        <img src="images/emblem.png" alt="" width="44" height="40" class="brand-mark">
-        <span class="brand-text">
-          <span class="brand-name">Adanfopa</span>
-          <span class="brand-sub">Commodities Ltd</span>
-        </span>
+        <img src="images/logo.jpeg" alt="Adanfopa Commodities Ltd" width="73" height="56" class="brand-logo">
       </a>
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
               aria-controls="mainNav" aria-expanded="false" aria-label="Open menu">
@@ -101,6 +97,7 @@
                         class="piece" :class="['piece-' + key, { 'is-active': activePiece === key }]"
                         :aria-label="p.title" :aria-pressed="activePiece === key"
                         @mouseenter="activePiece = key" @focus="activePiece = key" @click="activePiece = key">
+                  <img :src="p.src" alt="" draggable="false" :style="p.box">
                 </button>
               </div>
               <Transition name="swap" mode="out-in">
@@ -241,7 +238,6 @@
             <ul class="season-key">
               <li><span class="key main"></span> Main crop</li>
               <li><span class="key light"></span> Light crop</li>
-              <li><span class="key quiet"></span> Between crops</li>
             </ul>
           </div>
         </div>
@@ -364,7 +360,7 @@
   <footer class="site-footer">
     <div class="container d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
       <div class="d-flex align-items-center gap-3">
-        <img src="images/emblem.png" alt="" width="44" height="40">
+        <img src="images/logo.jpeg" alt="Adanfopa Commodities Ltd" width="73" height="56" class="footer-logo">
         <div>
           <div class="footer-name">Adanfopa Commodities Ltd</div>
           <small>P.O.Box SN 35, Santasi, Kumasi</small><br>

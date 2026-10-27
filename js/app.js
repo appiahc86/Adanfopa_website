@@ -45,12 +45,16 @@ createApp({
       }
     };
 
-    /* ---- hero emblem ---- */
+    /* ---- hero emblem (real photos in four wedges) ---- */
     const pieces = {
-      tree: { title: 'On the farm', text: 'Cocoa trees grow on farms across Ghana\'s cocoa-growing regions.' },
-      pod: { title: 'The pod', text: 'Ripe pods are cut from the tree by hand, then split open.' },
-      beans: { title: 'The beans', text: 'Beans are fermented and dried before they are sold.' },
-      open: { title: 'Inside the pod', text: 'Fresh beans sit in sweet white pulp, ready for fermenting.' },
+      tree: { src: 'images/gallery/farm1.jpg', box: { left: '0%', top: '0%', width: '50.4%', height: '60.5%' },
+              title: 'On the farm', text: 'Cocoa trees grow on farms across Ghana\'s cocoa-growing regions.' },
+      pod: { src: 'images/gallery/pod1.jpeg', box: { left: '51.6%', top: '0%', width: '48.4%', height: '51.2%' },
+             title: 'The pod', text: 'Ripe pods are cut from the tree by hand, then split open.' },
+      beans: { src: 'images/gallery/beans1.jpeg', box: { left: '52.4%', top: '27.8%', width: '47.6%', height: '58.3%' },
+               title: 'The beans', text: 'Beans are fermented and dried before they are sold.' },
+      open: { src: 'images/gallery/open1.jpeg', box: { left: '0%', top: '54.4%', width: '100%', height: '45.6%', objectPosition: '50% 42%' },
+              title: 'Inside the pod', text: 'Fresh beans sit in sweet white pulp, ready for fermenting.' },
     };
     const activePiece = ref('tree');
 
@@ -100,10 +104,10 @@ createApp({
 
     /* ---- gallery ---- */
     const gallery = [
-      { src: 'images/gallery/farm.jpg', alt: 'Cocoa tree with ripe pods', caption: 'The farm' },
-      { src: 'images/gallery/pod.jpg', alt: 'A ripe cocoa pod', caption: 'The pod' },
-      { src: 'images/gallery/open.jpg', alt: 'An opened cocoa pod full of beans', caption: 'Inside the pod' },
-      { src: 'images/gallery/beans.jpg', alt: 'Dried cocoa beans', caption: 'The beans' },
+      { src: 'images/gallery/farm1.jpg', alt: 'Cocoa trees on a farm with ripe yellow pods', caption: 'The farm' },
+      { src: 'images/gallery/pod1.jpeg', alt: 'A ripe yellow cocoa pod on the tree', caption: 'The pod' },
+      { src: 'images/gallery/open1.jpeg', alt: 'A hand holding an opened cocoa pod with white pulp', caption: 'Inside the pod' },
+      { src: 'images/gallery/beans1.jpeg', alt: 'Dried cocoa beans on sackcloth', caption: 'The beans' },
     ];
 
     /* ---- FAQ ---- */
@@ -124,7 +128,7 @@ createApp({
     /* ---- cocoa calendar ---- */
     // main: Oct-Mar, light: Jul-Sep, quiet: Apr-Jun
     const monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-    const crops = ['main', 'main', 'main', 'quiet', 'quiet', 'quiet', 'light', 'light', 'light', 'main', 'main', 'main'];
+    const crops = ['main', 'main', 'main', 'light', 'light', 'light', 'light', 'light', 'light', 'main', 'main', 'main'];
     const months = monthNames.map((name, i) => ({ name, crop: crops[i] }));
     const currentMonth = new Date().getMonth();
 
