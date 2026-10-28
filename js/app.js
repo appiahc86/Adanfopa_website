@@ -10,7 +10,7 @@ const img = (path) => path + '?v=' + ASSET_VERSION;
 ------------------------------------------------------------------- */
 
 // Phone numbers as written locally (0XXXXXXXXX)
-const PHONE_NUMBERS = ['0243631511', '0248683770', '0248714806', '0245276032'];
+const PHONE_NUMBERS = ['0248683770', '0243631511', '0248714806', '0245276032'];
 
 // email address !!
 const EMAIL = 'info@adanfopacommoditiesgh.com';
@@ -119,7 +119,7 @@ createApp({
       { q: 'How do I sell my cocoa to Adanfopa?', a: 'Call any of our phone lines or send us a WhatsApp message. We will agree a time and place to meet.' },
       { q: 'What price will I get?', a: 'The price depends on the market and the quality of your cocoa. Call us for the current price.' },
       { q: 'How do I buy cocoa from you?', a: 'Tell us how much you need and where it should go, by phone, WhatsApp or email. We will reply with what is available.' },
-      { q: 'Where are you?', a: 'Our office is in Santasi, Kumasi. Our postal address is P.O.Box SN 35, Santasi, Kumasi.' },
+      { q: 'Where are you?', a: 'Our office is Kumasi, Ghana, Ashanti Region. Our postal address is P.O.Box SN 35, Kumasi.' },
     ];
 
     /* ---- opening hours ---- */
