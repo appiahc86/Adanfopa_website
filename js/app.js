@@ -1,5 +1,9 @@
 const { createApp, ref, reactive, computed, onMounted, onBeforeUnmount } = Vue;
 
+/* Bump this number whenever you change any image, so browsers fetch the new files. */
+const ASSET_VERSION = '20261028';
+const img = (path) => path + '?v=' + ASSET_VERSION;
+
 /* ------------------------------------------------------------------
   Everything on the page comes from here
    or from index.html.
@@ -46,16 +50,16 @@ createApp({
     };
 
     /* ---- hero emblem (real photos in four wedges) ---- */
-    const pieces = {
-      tree: { src: 'images/gallery/farm1.jpg', box: { left: '0%', top: '0%', width: '50.4%', height: '60.5%' },
+      const pieces = {
+          tree: { src: img('images/gallery/farm1.jpg'), box: { left: '0%', top: '0%', width: '50.4%', height: '60.5%' },
               title: 'On the farm', text: 'Cocoa trees grow on farms across Ghana\'s cocoa-growing regions.' },
-      pod: { src: 'images/gallery/pod1.jpeg', box: { left: '51.6%', top: '0%', width: '48.4%', height: '51.2%' },
-             title: 'The pod', text: 'Ripe pods are cut from the tree by hand, then split open.' },
-      beans: { src: 'images/gallery/beans1.jpeg', box: { left: '52.4%', top: '27.8%', width: '47.6%', height: '58.3%' },
-               title: 'The beans', text: 'Beans are fermented and dried before they are sold.' },
-      open: { src: 'images/gallery/open1.jpeg', box: { left: '0%', top: '54.4%', width: '100%', height: '45.6%', objectPosition: '50% 42%' },
+          pod: { src: img('images/gallery/pod1.jpeg'), box: { left: '51.6%', top: '0%', width: '48.4%', height: '51.2%' },
+              title: 'The pod', text: 'Ripe pods are cut from the tree by hand, then split open.' },
+          beans: { src: img('images/gallery/beans1.jpeg'), box: { left: '52.4%', top: '27.8%', width: '47.6%', height: '58.3%' },
+              title: 'The beans', text: 'Beans are fermented and dried before they are sold.' },
+          open: { src: img('images/gallery/open1.jpeg'), box: { left: '0%', top: '54.4%', width: '100%', height: '45.6%', objectPosition: '50% 42%' },
               title: 'Inside the pod', text: 'Fresh beans sit in sweet white pulp, ready for fermenting.' },
-    };
+      };
     const activePiece = ref('tree');
 
     /* ---- sell / buy tabs ---- */
@@ -103,12 +107,12 @@ createApp({
     ];
 
     /* ---- gallery ---- */
-    const gallery = [
-      { src: 'images/gallery/farm1.jpg', alt: 'Cocoa trees on a farm with ripe yellow pods', caption: 'The farm' },
-      { src: 'images/gallery/pod1.jpeg', alt: 'A ripe yellow cocoa pod on the tree', caption: 'The pod' },
-      { src: 'images/gallery/open1.jpeg', alt: 'A hand holding an opened cocoa pod with white pulp', caption: 'Inside the pod' },
-      { src: 'images/gallery/beans1.jpeg', alt: 'Dried cocoa beans on sackcloth', caption: 'The beans' },
-    ];
+      const gallery = [
+          { src: img('images/gallery/farm1.jpg'), alt: 'Cocoa trees on a farm with ripe yellow pods', caption: 'The farm' },
+          { src: img('images/gallery/pod1.jpeg'), alt: 'A ripe yellow cocoa pod on the tree', caption: 'The pod' },
+          { src: img('images/gallery/open1.jpeg'), alt: 'A hand holding an opened cocoa pod with white pulp', caption: 'Inside the pod' },
+          { src: img('images/gallery/beans1.jpeg'), alt: 'Dried cocoa beans on sackcloth', caption: 'The beans' },
+      ];
 
     /* ---- FAQ ---- */
     const faqs = [
