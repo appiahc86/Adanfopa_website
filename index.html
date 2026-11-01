@@ -20,7 +20,7 @@
 
   <link rel="stylesheet" href="vendor/bootstrap.min.css">
   <link rel="stylesheet" href="vendor/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/styles.css?v=20261028">
+    <link rel="stylesheet" href="css/styles.css?v=20261101">
 
   <script type="application/ld+json">
   {
@@ -137,7 +137,75 @@
       </div>
     </section>
 
-    <!-- ============ WHY US ============ -->
+
+
+      <!-- ============ SUSTAINABILITY & SOCIAL IMPACT ============ -->
+    <section id="sustainability" class="section section-tint">
+          <div class="container">
+              <div class="row g-5 align-items-start">
+                  <div class="col-lg-6" v-reveal>
+<!--                      <p class="eyebrow"><i class="bi bi-tree-fill"></i> Sustainability &amp; Social Impact</p>-->
+<!--                      <h2 class="section-title">Cocoa that is good for the farmer, the land and the buyer.</h2>-->
+                      <h2 class="section-title">Sustainability &amp; Social Impact</h2>
+                      <p class="lead-text">
+                          Adanfopa believes in sustainable cocoa production, done in a responsible manner, so that cocoa
+                          beans keep coming all year round to meet both current and future demand.
+                          We encourage our farmers to adopt good agricultural practices that increase crop yield and
+                          farmers' income, improve their livelihoods and protect the environment.
+                      </p>
+                      <p class="lead-text mb-0">
+                          We are committed to ensuring that our farmers produce traceable, deforestation-free cocoa beans
+                          while protecting the environment, water bodies and biodiversity.
+                      </p>
+                  </div>
+
+                  <div class="col-lg-6" v-reveal="{ delay: 120 }">
+                      <ul class="commitments">
+                          <li v-for="c in commitments" :key="c.title">
+                              <i class="bi" :class="c.icon"></i>
+                              <div><strong>{{ c.title }}</strong><span>{{ c.text }}</span></div>
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+
+              <h3 class="subhead" v-reveal>
+                  To ensure sustainable cocoa production, we provide our farmers access to three essential things:
+              </h3>
+              <div class="row g-4">
+                  <div class="col-md-4" v-for="(p, i) in pillars" :key="p.title" v-reveal="{ delay: i * 120 }">
+                      <article class="pillar">
+                          <span class="pillar-num">{{ i + 1 }}</span>
+                          <i class="bi" :class="p.icon"></i>
+                          <h3>{{ p.title }}</h3>
+                          <p>{{ p.text }}</p>
+                      </article>
+                  </div>
+              </div>
+
+              <div class="training" v-reveal>
+                  <h3><i class="bi bi-mortarboard-fill"></i> Training and extension topics</h3>
+                  <ul class="chips">
+                      <li v-for="t in trainingTopics" :key="t">{{ t }}</li>
+                  </ul>
+              </div>
+
+              <div class="impact-note" v-reveal>
+                  <i class="bi bi-clipboard-data-fill"></i>
+                  <p class="mb-0">We also conduct regular social impact analysis to understand and measure the level of impact we are making in the lives of our farmers.</p>
+              </div>
+
+              <blockquote class="triple" v-reveal.watch>
+                  <p>We say that cocoa sustainability is achieved only when cocoa farming is</p>
+                  <ul>
+                      <li v-for="(w, i) in triple" :key="w" :style="{ '--i': i }">{{ w }}</li>
+                  </ul>
+              </blockquote>
+          </div>
+      </section>
+
+
+      <!-- ============ WHY US ============ -->
     <section id="why" class="section pt-0">
       <div class="container">
         <div class="row g-4">

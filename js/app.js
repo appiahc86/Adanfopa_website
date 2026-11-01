@@ -34,6 +34,7 @@ createApp({
     /* ---- navigation ---- */
     const links = [
       { href: '#about', label: 'About' },
+      { href: '#sustainability', label: 'Sustainability' },
       { href: '#services', label: 'Sell or buy' },
       { href: '#process', label: 'How it works' },
       { href: '#faq', label: 'FAQ' },
@@ -114,6 +115,23 @@ createApp({
           { src: img('images/gallery/beans1.jpeg'), alt: 'Dried cocoa beans on sackcloth', caption: 'The beans' },
       ];
 
+    /* ---- sustainability & social impact ---- */
+    const commitments = [
+      { icon: 'bi-patch-check-fill', title: 'Traceable', text: 'We know where our cocoa beans come from.' },
+      { icon: 'bi-tree-fill', title: 'Deforestation-free', text: 'Farmers grow cocoa without clearing forest.' },
+      { icon: 'bi-droplet-fill', title: 'Water and biodiversity', text: 'We protect water bodies and the living things around the farm.' },
+    ];
+    const pillars = [
+      { icon: 'bi-flower1', title: 'Quality agro inputs', text: 'Sustainable access to approved quality agro inputs (preferably organic inputs).' },
+      { icon: 'bi-cash-coin', title: 'Micro credit', text: 'Sustainable access to micro credit.' },
+      { icon: 'bi-mortarboard-fill', title: 'Training and extension', text: 'Sustainable access to training and extension services that help farmers farm better.' },
+    ];
+    const trainingTopics = [
+      'GAPs', 'Traceability', 'EUDR requirements', 'Effective application of inputs',
+      'Environmental protection', 'Financial literacy', 'ICPM', 'Biodiversity', 'Group management',
+    ];
+    const triple = ['profitable,', 'environmentally sound', 'and socially responsible.'];
+
     /* ---- FAQ ---- */
     const faqs = [
       { q: 'How do I sell my cocoa to Adanfopa?', a: 'Call any of our phone lines or send us a WhatsApp message. We will agree a time and place to meet.' },
@@ -182,6 +200,7 @@ createApp({
       months, currentMonth,
       form, waLink, mailLink, EMAIL,
       reasons, gallery, faqs, hours,
+      commitments, pillars, trainingTopics, triple,
       year,
     };
   },
