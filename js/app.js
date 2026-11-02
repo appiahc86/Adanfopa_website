@@ -1,7 +1,7 @@
 const { createApp, ref, reactive, computed, onMounted, onBeforeUnmount } = Vue;
 
 /* Bump this number whenever you change any image, so browsers fetch the new files. */
-const ASSET_VERSION = '20261028';
+const ASSET_VERSION = '20261101';
 const img = (path) => path + '?v=' + ASSET_VERSION;
 
 /* ------------------------------------------------------------------
