@@ -119,7 +119,7 @@ createApp({
     const commitments = [
       { icon: 'bi-patch-check-fill', title: 'Traceable', text: 'We know where our cocoa beans come from.' },
       { icon: 'bi-tree-fill', title: 'Deforestation-free', text: 'Farmers grow cocoa without clearing forest.' },
-      { icon: 'bi-droplet-fill', title: 'Water and biodiversity', text: 'We protect water bodies and the living things around the farm.' },
+      { icon: 'bi-droplet-fill', title: 'Environmental Protection', text: 'We protect water bodies and the living things around the farm.' },
     ];
     const pillars = [
       { icon: 'bi-flower1', title: 'Quality agro inputs', text: 'Sustainable access to approved quality agro inputs (preferably organic inputs).' },
